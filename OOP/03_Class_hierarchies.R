@@ -31,6 +31,7 @@ top.list_stack <- function(stack) stack$elements$head
 
 ## ------------------------------------------------------------------------
 methods("top")
+methods("predict")
 
 ## ------------------------------------------------------------------------
 draw <- function(object) UseMethod("draw")
@@ -80,6 +81,9 @@ draw.circle <- function(object) {
 draw.composite <- function(object) {
   invisible(Map(draw, object))
 }
+
+
+# Constructing the plot
 
 ## ----plotting-shapes-1, fig.cap="Plot of graphical elements."------------
 plot(c(0, 10), c(0, 10), 

@@ -17,6 +17,9 @@ empty_vector_stack <- function() {
   stack
 }
 
+
+# Check the type of class and attributes in the class
+
 stack <- empty_vector_stack()
 stack
 attributes(stack)
@@ -159,6 +162,7 @@ pop_until <- function(stack, element) {
 }
 
 ## ------------------------------------------------------------------------
+## Extending the interface
 contains <- function(stack, element) {
   UseMethod("contains")
 }
@@ -170,6 +174,8 @@ contains.vector_stack <- function(stack, element) {
 }
 
 ## ------------------------------------------------------------------------
+
+
 merge_lists <- function(x, y) {
   if (length(x) == 0) return(y)
   if (length(y) == 0) return(x)
@@ -180,6 +186,9 @@ merge_lists <- function(x, y) {
     c(y[1], merge_lists(x, y[-1]))
   }
 }
+
+
+
 
 sort_list <- function(x) {
   if (length(x) <= 1) return(x)
@@ -321,7 +330,9 @@ sort_list(x, tuple_less)
 ## ------------------------------------------------------------------------
 foo <- function(object) UseMethod("foo")
 foo.numeric <- function(object) object
+attributes(foo.numeric)
 foo(4)
+class(foo.numeric)
 
 bar <- function(object) {
   x <- 2
